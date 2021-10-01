@@ -12,6 +12,21 @@
     <label for="namaPengguna">Create Username:</label>
     <input type="text" id="namaPengguna">
 
+    <label for="kataLaluan">Enter Password</label>
+    <input type="password" id="kataLaluan">
+
+
+    <a onclick="sayHi()" href="http://www.metallica.com" target="_blank" >Metallica</a>
+
+    <script>
+        function sayHi(){
+            event.preventDefault(); //stop the opening the webpage (metallica.com)
+            alert("Hi! We stopped the default event :)")
+        }
+    </script>
+
+    
+    
 
     <script src="js/events.js"></script>
 </body>
