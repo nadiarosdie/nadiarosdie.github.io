@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minMaxAvg</title>
+</head>
+<body>
+    <h1>Welcome to my minMaxAvg Calculator</h1>
+    
+
+
+    <script>
+        var i,n;
+        var max = 0;
+        var min = 0;
+        var sum = 0;
+        
+        n = parseInt(prompt("How many number you want to input"));
+        var arr = new Array(n);
+
+       
+        for(i=0;i<n;i++) {
+            arr[i] = parseInt(prompt("enter your numbers"));
+        }
+
+        //console.log(arr)
+
+        //finding minimum number
+        min = Math.min.apply(null,arr)
+        //console.log(min)
+        
+        // //finding maximum number
+        max = Math.max.apply(null,arr)
+        //console.log(max)
+        
+        //finding average of numbers
+        function average(a,n) {
+            for (var i = 0; i<n; i++)
+            sum += a[i];
+            return parseFloat(sum/n).toFixed(2);
+        }     
+
+           
+        document.write("<br>" + "Your inputs are " + "<strong>" + arr + "</strong>")
+        document.write("<br>" + "Your array size is = " + "<strong>" + n + "</strong>")
+        document.write("<br>" + "Minimum Number = " + "<strong>" + min + "</strong>" )
+        document.write("<br>" + "Maximum Number = " + "<strong>" + max + "</strong>" )
+        document.write("<br>" + "Average = " + "<strong>" + average(arr,n) + "</strong>")
+
+
+    </script>
+
+</body>
+</html>
