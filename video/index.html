@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+</head>
+<body>
+    <h1>HTML5 Video Example</h1>
+
+    <h2>JS Video Control</h2>
+    <video id="myVideo" width="400" height="400" poster="https://dinbror.dk/blog/wp-content/uploads/2016/08/html5-video-750x400.jpg
+    ">
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your brwoser does not support the video tag
+    </video>
+    <div id="video-controls">
+        <button id="playBtn">Play</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="freezeBtn">Freeze</button>
+    </div>
+
+
+    <h2>Autoplay muted</h2>
+
+    <video autoplay muted>
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your brwoser does not support the video tag
+    </video>
+
+
+    <h2>Autoplay muted width height</h2>
+
+    <video autoplay muted width="400" height="400">
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your brwoser does not support the video tag
+    </video>
+
+
+
+    <h2>With Controls</h2>
+
+    <video controls>
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your brwoser does not support the video tag
+    </video>
+
+
+    <h2>With Controls Autoplay Muted Width height</h2>
+
+    <video controls autoplay muted width="400" height="400">
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your brwoser does not support the video tag
+    </video>
+
+
+    <h2>With Controls Height Width Poster Preload=none</h2>
+
+    <video controls width="400" height="400" poster="https://dinbror.dk/blog/wp-content/uploads/2016/08/html5-video-750x400.jpg
+    ">
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your brwoser does not support the video tag
+    </video>
+
+
+    <h2>With Controls Height Width Poster Preload=none Loop</h2>
+
+    <video controls width="400" height="400" poster="https://dinbror.dk/blog/wp-content/uploads/2016/08/html5-video-750x400.jpg
+    " loop>
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your brwoser does not support the video tag
+    </video>
+
+
+
+    <script src="js/index.js"></script>
+</body>
+</html>
