@@ -11,8 +11,8 @@ function palChecker(word){
     let reverseArr = [...newArr].reverse().join('')
     
     if(newArr == reverseArr){
-        alert("Your word : (" + word + ")  is a Palindrome word")
+        alert("TRUE, your word : (" + word + ")  is a Palindrome word")
     } else {
-        alert("Your word : (" + word + ")  is not a Palindrome word")
+        alert("FALSE, your word : (" + word + ")  is not a Palindrome word")
     }
 }
