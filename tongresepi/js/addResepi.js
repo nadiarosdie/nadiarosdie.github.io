@@ -39,39 +39,23 @@ function saveRecipe(i) {
 
 function displayRecipe() {
     let temp = listItems.map(item => `
+    <div class="col">
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class ="card-body">
-            <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class ="btn btn-primary">Go somewhere</a>
+            <img src="${item.coverImage}" class="card-img-top" alt="${item.name}">
+            <div class="card-body">
+                <h5 class="card-title">${item.name}</h5>
+                <ul class="text-start">
+                    <li><strong>Preparation Time: </strong>${item.prepTime}</li>
+                    <li><strong>Category: </strong>${item.category}</li>
+                    <li><strong>Ingredient: </strong>${item.ingredient}</li>
+                    <li><strong>Instruction: </strong>${item.instruction}</li>
+                    <li><strong>Notes: </strong>${item.notes}</li>
+                </ul >
+                <button class="btn btn-lg btn-outline-danger" aria-label="Delete ${item.name}" value="${item.id}">Delete
+            Recipe</button>
             </div>
-        </div>`
-    )
-}
-
-
-
-//paste
-function displayRecipes(){
-    const tempString = listItems.map(item => `
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-white bg-primary border-primary">
-            <h4 class="my-0">${item.name}</h4>
-          </div>
-          <div class="card-body">
-            <ul class="text-start">
-              <li><strong>Method: </strong>${item.method}</li>
-              <li><strong>Roast: </strong>${item.roast}</li>
-              <li><strong>Grind Size: </strong>${item.grind}</li>
-              <li><strong>Ratio: </strong>${item.ratio}</li>
-              ${!item.note.length ? "" : `<li><strong>Note: </strong>${item.note}</li>`}
-            </ul>
-            <button class="btn btn-lg btn-outline-danger" aria-label="Delete ${item.name}" value="${item.id}">Delete Recipe</button>
-          </div>
         </div>
-      </div>
-      `).join('');
-    recipeContainer.innerHTML = tempString;
-  }
+    </div>`
+    )
+recipeContainer.innerHTML = temp;
+}
