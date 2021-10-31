@@ -58,3 +58,15 @@ recipeContainer.innerHTML = temp;
 }
 
 
+//Delete recipe
+// recipeContainer.addEventListener("click", i => {
+//     if(i.target.matches(".btn-outline-danger")){
+//         deleteRecipeFromList(Number.(i.target.value))
+//     }
+// })
+
+// function deleteRecipeFromList(id){
+//     listItems = listItems.filter(item => item.id !== id);
+//     recipeContainer.dispatchEvent(new CustomEvent("refreshRecipes"))
+// }
+
