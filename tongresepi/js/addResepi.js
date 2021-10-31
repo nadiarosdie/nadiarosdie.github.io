@@ -40,22 +40,21 @@ function saveRecipe(i) {
 function displayRecipe() {
     let temp = listItems.map(item => `
     <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="${item.coverImage}" class="card-img-top" alt="${item.name}">
-            <div class="card-body">
-                <h5 class="card-title">${item.name}</h5>
-                <ul class="text-start">
-                    <li><strong>Preparation Time: </strong>${item.prepTime}</li>
-                    <li><strong>Category: </strong>${item.category}</li>
-                    <li><strong>Ingredient: </strong>${item.ingredient}</li>
-                    <li><strong>Instruction: </strong>${item.instruction}</li>
-                    <li><strong>Notes: </strong>${item.notes}</li>
-                </ul >
-                <button class="btn btn-lg btn-outline-danger" aria-label="Delete ${item.name}" value="${item.id}">Delete
-            Recipe</button>
-            </div>
+    <div class="card mb-3">
+        <img src="${item.coverImage}" class="card-img-top" alt="${item.name}">
+        <div class="card-body">
+            <ul class="text-start">
+                <li><strong>Preparation Time: </strong>${item.prepTime}</li>
+                <li><strong>Category: </strong>${item.category}</li>
+                <li><strong>Ingredient: </strong>${item.ingredient}</li>
+                <li><strong>Instruction: </strong>${item.instruction}</li>
+                <li><strong>Notes: </strong>${item.notes}</li>
+            </ul >
+            <button class="btn btn-lg btn-outline-danger" aria-label="Delete ${item.name}" value="${item.id}">Delete Recipe</button>
         </div>
-    </div>`
-    )
+      </div>
+    `)
 recipeContainer.innerHTML = temp;
 }
+
+

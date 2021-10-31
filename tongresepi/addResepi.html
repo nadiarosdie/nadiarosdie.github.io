@@ -53,14 +53,7 @@
                         </div>
                     </div>
                 </nav>
-            </div>
-
-
-
-
-
-
-            
+            </div>            
         </div>
 
 
@@ -68,14 +61,12 @@
         <!-- Add Recipe Section-->
         <div class="container">
             <div class="row m4 text-center">
-                <h1 class="text-primary display-4 fw-normal">Add-on Your TongResepi</h1>
-                <p class="fs-5 text-muted">Feel free to custom your recipe below: </p>
+                <h1 class="text-primary display-5 fw-normal">Add-on Your <span style="color:#e74c3c ;">TongResepi</span></h1>
+                <p class="fs- text-muted">Feel free to custom your recipe below: </p>
             </div>
-        </div>
 
-        <main>
-            <div class="container">
-                <form id="recipe-form" class="p-4 m-4 row shadow-sm rounded-3 border border-warning">
+
+            <form id="recipe-form" class="p-4 m-4 row shadow-sm rounded-3 border border-warning">
                     <div class="form-group col-md-4 my-2">
                         <label for="name">Name of Recipe</label>
                         <input type="text" required autocomplete="off" id="name" class="form-control" placeholder="e.g., Nasi Lemak TokPah">
@@ -99,22 +90,22 @@
 
                     <div class="form-group col-md-4 my-2">
                         <label for="ingredient">Ingredient</label>
-                        <input type="text" required autocomplete="off" id="ingredient" class="form-control" placeholder="e.g., - 2 cups of rice " size="100">
+                        <textarea type="text" required autocomplete="off" id="ingredient" class="form-control" placeholder="e.g., - 2 cups of rice "></textarea>
                     </div>
 
                     <div class="form-group col-md-8 my-2">
                         <label for="instruction">Instruction</label>
-                        <input type="text" required autocomplete="off" id="instruction" class="form-control" placeholder="e.g., No.1: Cook Your Rice" size="1000">
+                        <textarea type="text" required autocomplete="off" id="instruction" class="form-control" placeholder="e.g., No.1: Cook Your Rice"></textarea>
                     </div>
 
-                    <div class="form-group col-md-8 my-2">
+                    <div class="form-group col-md-12 my-2">
                         <label for="notes">Notes (optional)</label>
                         <input type="text" autocomplete="off" id="notes" class="form-control" placeholder="e.g., This is Mom's recipe" size="200">
                     </div>
 
-                    <div class="form-group col-md-4 my-2">
+                    <div class="form-group col-md-12 my-2">
                         <label for="coverImg">Cover Image</label>
-                        <input type="file" accept="image/png, image/jpg"  autocomplete="off" id="coverImg" class="form-control">
+                        <input type="text" required autocomplete="off" id="coverImg" class="form-control" placeholder="e.g., https://i.ytimg.com/vi/IUIs4C86Ilo/maxresdefault.jpg  " size="1000">
                     </div>
 
                     <!-- submit button -->
@@ -129,14 +120,22 @@
                     </div>
 
                     <!-- to fill up the saved recipe here - from DOM javascript -->
-                    <div class="row row-cols-1 row-cols-md-3 mx-4 my-6 text-center" id="recipe-container"></div>
+                    <div class="row mx-4 my-6 text-center" id="recipe-container"></div>
                 </div>
+
+
+
+        </div>
+
+        <!-- <main>
+            <div class="container">
+                
 
 
 
 
             </div>
-        </main>
+        </main> -->
         
 
 
