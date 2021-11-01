@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TongResepi: My Recipe</title>
+    <title>TongResepi: My Resepi</title>
     <link rel="icon" href="images/food_icon.svg" type="image/icon type">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -43,7 +43,7 @@
                                     <a class="nav-link" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="addResepi.html">Add Resepi</a>
+                                    <a class="nav-link" href="index.html">Add Resepi</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" href="addResepi.html" style="color: #e74c3c;">My Resepi</a>
@@ -53,30 +53,48 @@
                         </div>
                     </div>
                 </nav>
-            </div>
+            </div>            
         </div>
 
 
 
-        <!-- All Resepi from Sheety-->
+        <!-- Add Section Title-->
+        <div class="container">
+            <div class="row m4 text-center">
+                <h1 class="text-primary display-5 fw-normal">Manage Your <span style="color:#e74c3c ;">TongResepi</span></h1>
+                <p class="fs- text-muted">You can view and delete your recipes in below table: </p>
+            </div>
 
-        <!-- Delete Button -->
-        
-
-
-
-  
-
+        <!-- Booking List -->
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" id="refreshNow">Refresh Now</button>
+                <table class="table table-striped" id="recipeList">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Recipe</th>
+                            <th scope="col">Prep Time</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Ingredient</th>
+                            <th scope="col">Instruction</th>
+                            <th scope="col">Notes</th>
+                            <th scope="col">Cover Image</th>
+                            <th scope="col">Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>    
     </div>
-
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="js/addResepi.js"></script>
+    <script src="js/myResepi.js"></script>
 </body>
 
 </html>
