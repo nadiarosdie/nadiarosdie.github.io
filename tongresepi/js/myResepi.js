@@ -30,7 +30,6 @@ function getMyResepi() {
                 let gNotes = json.myResepi[i].notes;
                 let gCoverImg = json.myResepi[i].coverImg;
                 let gId = json.myResepi[i].id;
-                let gIdNo = json.myResepi[i].idNo;
                 let btnId = "delete" + gId;
 
                 //add info to table - add row first
