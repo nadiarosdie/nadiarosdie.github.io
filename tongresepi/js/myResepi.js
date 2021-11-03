@@ -4,6 +4,13 @@ refreshNowBtn.addEventListener("click", function () {
     getMyResepi()
 })
 
+//imageError
+function  myBrokenImg(image){
+    image.onerror = ""
+    image.src = "images/product-placeholder.gif";
+}
+
+
 function getMyResepi() {
     let url = 'https://api.sheety.co/4677a70e7b5b2beb30bd3c56fcb6bfba/tongResepi/myResepi';
     fetch(url)
@@ -42,7 +49,7 @@ function getMyResepi() {
                 row.insertCell(4).innerHTML = gIngredient
                 row.insertCell(5).innerHTML = gInstruction
                 row.insertCell(6).innerHTML = gNotes
-                row.insertCell(7).innerHTML = "<img src='" + gCoverImg + "' alt='" + gResepiName + "' width='90' height='70'>"
+                row.insertCell(7).innerHTML = "<img src='" + gCoverImg +"' alt='" + gResepiName + "' width='90' height='70' onerror='myBrokenImg(this);'/>"
                 row.insertCell(8).innerHTML = "<button id='" + btnId + "' type='button' class='btn btn-danger'>X</button>"
 
                 myResepiIds.push(btnId)

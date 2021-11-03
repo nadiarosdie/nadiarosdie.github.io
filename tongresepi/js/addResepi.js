@@ -74,7 +74,7 @@ function displayRecipe(nameVal, prepTimeVal, categoryVal, ingredientVal, instruc
     let temp = `
     <div class="col">
     <div class="card mb-3">
-    <img src="${coverImageVal}" class="card-img-top" alt="${nameVal}" onerror="myBrokenImg(this);"/>
+    <img src="${coverImageVal}" class="card-img-top" alt="${nameVal}" onerror="myBrokenImg(this); width='300' height='300'"/>
         <div class="card-body">
             <ul class="text-start">
                 <li><strong>Preparation Time: </strong>${prepTimeVal}</li>
