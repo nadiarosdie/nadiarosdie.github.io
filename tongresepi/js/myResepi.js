@@ -4,8 +4,9 @@ refreshNowBtn.addEventListener("click", function () {
     getMyResepi()
 })
 
-//imageError
-function  myBrokenImg(image){
+
+//imageError - function
+function myBrokenImg(image){
     image.onerror = ""
     image.src = "images/product-placeholder.gif";
 }
