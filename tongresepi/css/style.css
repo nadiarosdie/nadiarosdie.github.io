@@ -70,4 +70,8 @@
     height: 200px;
 }
 
+td, th {
+    vertical-align:middle;
+    }
+
 

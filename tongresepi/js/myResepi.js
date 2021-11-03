@@ -5,7 +5,7 @@ refreshNowBtn.addEventListener("click", function () {
 })
 
 function getMyResepi() {
-    let url = 'https://api.sheety.co/fd2cdd93bab8c59a6a630bb4674c6292/tongResepi/myResepi';
+    let url = 'https://api.sheety.co/4677a70e7b5b2beb30bd3c56fcb6bfba/tongResepi/myResepi';
     fetch(url)
         .then((response) => response.json())
         .then(json => {
@@ -21,6 +21,7 @@ function getMyResepi() {
             }
 
             //load all rows from Sheety API
+
             for (let i = 0; i < json.myResepi.length; i++) {
                 let gResepiName = json.myResepi[i].name;
                 let gPrepTime = json.myResepi[i].prepTime;
@@ -41,17 +42,21 @@ function getMyResepi() {
                 row.insertCell(4).innerHTML = gIngredient
                 row.insertCell(5).innerHTML = gInstruction
                 row.insertCell(6).innerHTML = gNotes
-                row.insertCell(7).innerHTML = gCoverImg
-                row.insertCell(8).innerHTML = "<button id='" + btnId + "' type='button' class='btn btn-danger'>Delete</button>"
+                row.insertCell(7).innerHTML = "<img src='" + gCoverImg + "' alt='" + gResepiName + "' width='90' height='70'>"
+                row.insertCell(8).innerHTML = "<button id='" + btnId + "' type='button' class='btn btn-danger'>X</button>"
 
-                myResepiIds.push(btnId)            
+                myResepiIds.push(btnId)
             }
+
+
+
 
 
             //delete button
             for (let j = 0; j < myResepiIds.length; j++) {
                 //console.log(myResepiIds[j])
                 let el = document.getElementById(myResepiIds[j])
+
                 el.addEventListener("click", function () {
                     //console.log(el.id + "clicked") - ada delete depan id no
                     let theId = el.id.replace("delete", "")
@@ -64,13 +69,13 @@ function getMyResepi() {
 
 function deleteRecipe(id) {
     //console.log("received id " + id)
-    let url = 'https://api.sheety.co/fd2cdd93bab8c59a6a630bb4674c6292/tongResepi/myResepi/' + id;
+    let url = 'https://api.sheety.co/4677a70e7b5b2beb30bd3c56fcb6bfba/tongResepi/myResepi/' + id;
     fetch(url, {
         method: 'DELETE',
     })
         .then(() => {
             //console.log('Object deleted');
-            alert("Record has been deleted")
+            alert(`Your TongResipi Id ${id} has been deleted`)
             getMyResepi()
         });
 }

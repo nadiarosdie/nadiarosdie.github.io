@@ -1,72 +1,87 @@
-//Get element and assign variable
+let addRecipeBtn = document.getElementById("btnAddRecipe")
 let recipeForm = document.querySelector("#recipe-form")
 let recipeContainer = document.querySelector("#recipe-container")
-let listItems = []
 
 
-//EventListeners
-recipeForm.addEventListener("submit", saveRecipe)
+addRecipeBtn.addEventListener("click", function () {
+    let userName = document.getElementById("name");
+    let nameVal = userName.value;
+
+    let userPrepTime = document.getElementById("prepTime");
+    let prepTimeVal = userPrepTime.value;
+
+    let userCategory = document.getElementById("category");
+    let categoryVal = userCategory.value;
+
+    let userIngredient = document.getElementById("ingredient");
+    let ingredientVal = userIngredient.value;
+
+    let userInstruction = document.getElementById("instruction");
+    let instructionVal = userInstruction.value;
+
+    let userNotes = document.getElementById("notes");
+    let notesVal = userNotes.value;
+
+    let userCoverImage = document.getElementById("coverImg");
+    let coverImageVal = userCoverImage.value;
+
+    let id_no = Date.now();
+
+    addRecipeTable(nameVal, prepTimeVal, categoryVal, ingredientVal, instructionVal, notesVal, coverImageVal, id_no);
+    displayRecipe(nameVal, prepTimeVal, categoryVal, ingredientVal, instructionVal, notesVal, coverImageVal, id_no)
+})
 
 
-//Functions
-function saveRecipe(i) {
-    i.preventDefault();
-    // console.log(i)
-    let name = recipeForm.querySelector("#name").value;
-    let prepTime = recipeForm.querySelector("#prepTime").value;
-    let category = recipeForm.querySelector("#category").value;
-    let ingredient = recipeForm.querySelector("#ingredient").value;
-    let instruction = recipeForm.querySelector("#instruction").value;
-    let notes = recipeForm.querySelector("#notes").value;
-    let coverImage = recipeForm.querySelector("#coverImg").value;
+//store in sheety
+function addRecipeTable(userName, userPrepTime, userCategory, userIngredient, userInstruction, userNotes, userCoverImage, id_no) {
+    let url = 'https://api.sheety.co/4677a70e7b5b2beb30bd3c56fcb6bfba/tongResepi/myResepi';
+    let body = {
+        myresepi: {
+            idNo: id_no,
+            name: userName,
+            prepTime: userPrepTime,
+            category: userCategory,
+            ingredient: userIngredient,
+            instruction: userInstruction,
+            notes: userNotes,
+            coverImg: userCoverImage
 
-    let newRecipe = {
-        name,
-        prepTime,
-        category,
-        ingredient,
-        instruction,
-        notes,
-        coverImage,
-        id: Date.now(),
+        }
     }
-
-    // console.log(newRecipe);
-    listItems.push(newRecipe)
-    i.target.reset();
-    displayRecipe();
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then((response) => response.json())
+        .then(json => {
+            // Do something with object
+            console.log(json.myResepi);
+            alert(json.myResepi.name + " added in TongResepi. TQ")
+        });
 }
 
-function displayRecipe() {
-    let temp = listItems.map(item => `
+
+//display AddedRecipe
+function displayRecipe(nameVal, prepTimeVal, categoryVal, ingredientVal, instructionVal, notesVal, coverImageVal, id_no) {
+    let temp = `
     <div class="col">
     <div class="card mb-3">
-        <img src="${item.coverImage}" class="card-img-top" alt="${item.name}">
+        <img src="${coverImageVal}" class="card-img-top" alt="${nameVal}">
         <div class="card-body">
             <ul class="text-start">
-                <li><strong>Preparation Time: </strong>${item.prepTime}</li>
-                <li><strong>Category: </strong>${item.category}</li>
-                <li><strong>Ingredient: </strong>${item.ingredient}</li>
-                <li><strong>Instruction: </strong>${item.instruction}</li>
-                <li><strong>Notes: </strong>${item.notes}</li>
+                <li><strong>Preparation Time: </strong>${prepTimeVal}</li>
+                <li><strong>Category: </strong>${categoryVal}</li>
+                <li><strong>Ingredient: </strong>${ingredientVal}</li>
+                <li><strong>Instruction: </strong>${instructionVal}</li>
+                <li><strong>Notes: </strong>${notesVal}</li>
             </ul >
-            <button class="btn btn-lg btn-outline-danger" aria-label="Delete ${item.name}" value="${item.id}">Delete Recipe</button>
+            <a href="myResepi.html"><button class="btn btn-lg btn-outline-primary btn-sm" aria-label="Manage ${nameVal}">Manage Your TongResepi</button></a>
         </div>
       </div>
-    `)
-recipeContainer.innerHTML = temp;
+    `
+    recipeContainer.innerHTML = temp;
+
 }
-
-
-//Delete recipe
-// recipeContainer.addEventListener("click", i => {
-//     if(i.target.matches(".btn-outline-danger")){
-//         deleteRecipeFromList(Number.(i.target.value))
-//     }
-// })
-
-// function deleteRecipeFromList(id){
-//     listItems = listItems.filter(item => item.id !== id);
-//     recipeContainer.dispatchEvent(new CustomEvent("refreshRecipes"))
-// }
-
