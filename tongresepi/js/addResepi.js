@@ -63,13 +63,18 @@ function addRecipeTable(userName, userPrepTime, userCategory, userIngredient, us
         });
 }
 
+//imageError
+function  myBrokenImg(image){
+    image.onerror = ""
+    image.src = "images/product-placeholder.gif";
+}
 
 //display AddedRecipe
 function displayRecipe(nameVal, prepTimeVal, categoryVal, ingredientVal, instructionVal, notesVal, coverImageVal, id_no) {
     let temp = `
     <div class="col">
     <div class="card mb-3">
-        <img src="${coverImageVal}" class="card-img-top" alt="${nameVal}">
+    <img src="${coverImageVal}" class="card-img-top" alt="${nameVal}" onerror="myBrokenImg(this);"/>
         <div class="card-body">
             <ul class="text-start">
                 <li><strong>Preparation Time: </strong>${prepTimeVal}</li>
